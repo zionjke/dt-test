@@ -32,6 +32,12 @@ const PostPage = ({post: serverPost}:PostPageProps) => {
             <div className={styles.post}>
                 <h1 className={styles.post__title}>{post.title}</h1>
                 <p className={styles.post__text}>{post.body}</p>
+                <h2>Comments</h2>
+                {
+                    post.comments.map(comment => (
+                        <p>{comment.body}</p>
+                    ))
+                }
             </div>
         </Wrapper>
     )
